@@ -16,7 +16,21 @@ let row = stmt.get();
 if (row === undefined) {
     console.log('Your database appears to be empty. I will initialize it now.')
     const sqlInit = `
-        CREATE TABLE access ( id INTEGER PRIMARY KEY, remote-addr VARCHAR, remote-user VARCHAR, datetime VARCHAR, method VARCHAR, url VARCHAR, http-version NUMERIC, status INTEGER, content-length NUMERIC)`
+        CREATE TABLE accesslog ( 
+            id INTEGER PRIMARY KEY, 
+            remoteaddr VARCHAR, 
+            remoteuser VARCHAR, 
+            datetime VARCHAR, 
+            method VARCHAR, 
+            url VARCHAR, 
+            protocol VARCHAR,
+            http-version NUMERIC, 
+            secure VARCHAR,
+            status INTEGER, 
+            referer VARCHAR,
+            useragent VARCHAR.
+            content-length NUMERIC)
+        `
     db.exec(sqlInit)
 } else {
     console.log('Log database exists.')
