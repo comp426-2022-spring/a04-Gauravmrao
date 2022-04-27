@@ -11,6 +11,8 @@ const logdb = require('./database.js')
 const morgan = require('morgan');
 const fs = require('fs')
 
+// require process
+
 // require get the user input
 const args = require('minimist')(process.argv.slice(2))
 
