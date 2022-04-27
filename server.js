@@ -21,7 +21,7 @@ const server = app.listen(port, () => {
 })
 
 
-
+// coinflip function
 function coinFlip() {
     let coinValue;
     let coinNum = Math.random();
