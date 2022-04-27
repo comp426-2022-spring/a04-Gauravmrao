@@ -65,8 +65,6 @@ app.get('/app/flip', (req, res) => {
 })
 
 
-
-
 function coinFlips(flips) {
     const flippies = [];
     for (let i = 0; i < flips; i ++) {
@@ -155,7 +153,44 @@ if (args.log == true) {
 }
 
 
+// Middleware
+app.use( (req, res, next) => {
+  let logdata = {
+      remoteaddr: req.ip,
+      remoteuser: req.user,
+      time: Date.now(),
+      method: req.method,
+      url: req.url,
+      protocol: req.protocol,
+      httpversion: req.httpVersion,
+      status: res.statusCode,
+      referer: req.headers['referer'],
+      useragent: req.headers['user-agent']
+  }
+  const stmt = db.prepare('INSERT INTO accesslog (remoteaddr, remoteuser, time, method, url, protocol, httpversion, status, referer, useragent) VALUES (?,?,?,?,?,?,?,?,?,?)')
+  const info = stmt.run(logdata.remoteaddr, logdata.remoteuser, logdata.time, logdata.method, logdata.url, logdata.protocol, logdata.httpversion, logdata.status, logdata.referer, logdata.useragent)
+  next()
+})
+
+
+// error endpoint
+if (args.debug === true) {
+
+  app.get('/app/log/access', (req,res) => {
+    const stmt = db.prepare('SELECT * FROM accesslog').all()
+    res.status(200).json(stmt)
+  })
+
+  app.get('/app/error', (req,res) => {
+    throw new Error('Error!')
+  })
+}
 
 
 
-
+app.get('/app/', (req,res) => {
+      res.statusCode = 200;
+      res.statusMessage = 'OK';
+      res.writeHead(res.statusCode, {'Content-Type' : 'text/plain'});
+      res.end(res.statusCode+ ' ' +res.statusMessage);
+})
