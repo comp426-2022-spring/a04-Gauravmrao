@@ -201,7 +201,7 @@ app.use((req, res, next) => {
 // responder
 app.get('/app/', (req,res) => {
       res.statusCode = 200;
-      res.statusMessage = 'ok';
+      res.statusMessage = 'OK';
       res.writeHead(res.statusCode, {'Content-Type' : 'text/plain'});
       res.end(res.statusCode+ ' ' +res.statusMessage);
 });
@@ -209,21 +209,18 @@ app.get('/app/', (req,res) => {
 
 
 // Morgan
-let logging = morgan('combined')
-app.use(logging('common'))
+// let logging = morgan('combined')
+// app.use(logging('common'))
 
 
 
-// debugger
 if (debug === true) {
   app.get('/app/log/access', (req,res) => {
-    const statement = logdb.prepare('SELECT * FROM accesslog').all()
-    res.status(200).json(statement)
+    const stmt = db.prepare('SELECT * FROM accesslog').all()
+    res.status(200).json(stmt)
   })
-
-  // Error
   app.get('/app/error', (req,res) => {
-    throw new Error('Error successful')
+    throw new Error('Error test successful')
   })
 }
 
