@@ -8,7 +8,7 @@ const args = require('minimist')(process.argv.slice(2))
 const database = require('better-sqlite3')
 
 // define database
-const logdb = new database('log.logdb')
+const logdb = new database('log.db')
 
 // define statement
 const statement = logdb.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='access';`)
