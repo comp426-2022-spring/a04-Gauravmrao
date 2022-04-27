@@ -17,7 +17,7 @@ const { argv } = require('process');
 
 // use express
 app.use(express.urlencoded({extended: true}))
-
+app.use(express.json())
 
 
 // User input
