@@ -9,6 +9,8 @@ const logdb = new database('log.db')
 
 // define statement
 const statement = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='access';`)
+
+// define row
 let row = statement.get();
 if (row === undefined) {
     console.log('Log database appears to be empty. Creating log database...')
