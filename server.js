@@ -61,7 +61,6 @@ if (args.help === true) {
 
 
 
-
 // coinflip function
 function coinFlip() {
     let coinValue;
@@ -80,7 +79,6 @@ app.get('/app/flip', (req, res) => {
 })
 
 
-
 // coinflips function
 function coinFlips(flips) {
     const flippies = [];
@@ -89,7 +87,6 @@ function coinFlips(flips) {
     }
     return flippies;
 }
-
 
 // countflips function
 function countFlips(array) {
@@ -118,12 +115,10 @@ function countFlips(array) {
     }
 }
 
-
 // coinflips api info
 app.get('/app/flips/:number', (req, res) => {
     res.status(200).json({ 'raw' : coinFlips(req.params.number), 'summary' : countFlips(coinFlips(req.params.number))})
 })
-
 
 
 // flipACoin function
@@ -178,7 +173,7 @@ app.get('/app', (req, res) => {
 
 // no endpoint header
 app.use(function(req, res){
-    res.status(404).send("Endpoint does not exist")
+    res.status(404).send("404 NOT FOUND")
     res.type("text/plain")
 })
 
