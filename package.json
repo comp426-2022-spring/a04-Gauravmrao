@@ -1,0 +1,27 @@
+{
+  "name": "a04-gauravmrao",
+  "version": "0.0.1",
+  "description": "assignment 4 - databases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a04-Gauravmrao.git"
+  },
+  "author": "@gauravmrao",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a04-Gauravmrao/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a04-Gauravmrao#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.5.1",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.3",
+    "minimist": "^1.2.6",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.0.5"
+  }
+}
