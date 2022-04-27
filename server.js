@@ -137,7 +137,7 @@ app.get('/app', (req, res) => {
 
 
 app.use(function(req, res){
-    res.status(404).send("Endpoint does not exist")
+    res.status(404).send("\[\{.*(id).*\}\]")
     res.type("text/plain")
 })
 
