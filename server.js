@@ -131,7 +131,7 @@ app.get('/app/flip/call/tails', (req, res) => {
 
 
 app.get('/app', (req, res) => {
-    res.status(400).end('Endpoint does not exist')
+    res.status(200).end('The API is working')
     res.type('text/plain')
 })
 
