@@ -133,15 +133,6 @@ app.get('/app/flip/call/tails', (req, res) => {
 })
 
 
-
-
-/*
-app.get('/app/echo/:number', (req, res) => {
-    res.status(200).json({ 'message': req.params.number })
-})
-*/
-
-
 app.get('/app', (req, res) => {
     res.status(200).end('The API is working')
     res.type('text/plain')
@@ -152,3 +143,19 @@ app.use(function(req, res){
     res.status(404).send("Endpoint does not exist")
     res.type("text/plain")
 })
+
+
+
+if (args.log == true) {
+  const accessLog = fs.createWriteStream('access.log', { flags: 'a' })
+  app.use(morgan('combined', { stream: accessLog }))
+}
+
+
+
+
+
+
+
+
+
