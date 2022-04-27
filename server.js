@@ -101,6 +101,7 @@ function flipACoin(call) {
 }
 
 
+// flipACoin head api
 app.get('/app/flip/call/heads', (req, res) => {
     res.status(200).json(flipACoin("heads"))
 })
