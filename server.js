@@ -160,7 +160,11 @@ app.use(function(req,res){
 });
 
 
-
+// log to a database
+if (log === true) {
+  const accesslog = fs.createWriteStream('access.log', { flags: 'a' })
+  app.use(morgan('accesslog', { stream: accesslog }))
+}
 
 
 
@@ -186,13 +190,6 @@ app.use(logging('common'))
 
 
 
-
-
-// log to a database
-if (log === true) {
-  const accesslog = fs.createWriteStream('access.log', { flags: 'a' })
-  app.use(morgan('accesslog', { stream: accesslog }))
-}
 
 // function to log to database
 
