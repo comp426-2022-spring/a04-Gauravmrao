@@ -77,6 +77,8 @@ function countFlips(array) {
     }
 }
 
+
+// coinflips api info
 app.get('/app/flips/:number', (req, res) => {
     res.status(200).json({ 'raw' : coinFlips(req.params.number), 'summary' : countFlips(coinFlips(req.params.number))})
 })
