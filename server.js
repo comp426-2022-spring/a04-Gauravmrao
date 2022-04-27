@@ -214,10 +214,6 @@ app.use(logging('common'))
 
 
 
-
-
-
-
 // debugger
 if (debug === true) {
   app.get('/app/log/access', (req,res) => {
