@@ -40,7 +40,7 @@ app.get('/app/flip', (req, res) => {
 
 
 
-
+// coinflips function
 function coinFlips(flips) {
     const flippies = [];
     for (let i = 0; i < flips; i ++) {
