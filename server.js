@@ -12,6 +12,8 @@ const morgan = require('morgan');
 const errorhandler = require('errorhandler')
 const fs = require('fs')
 
+// require process
+
 // User input
 let portNum = require('minimist')(process.argv.slice(2));
 var port = portNum.port || 5000;
