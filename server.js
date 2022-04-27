@@ -7,6 +7,7 @@ const app = express();
 // require database
 const logdb = require('./database.js')
 
+// require morgan and fs
 const morgan = require('morgan');
 const errorhandler = require('errorhandler')
 const fs = require('fs')
