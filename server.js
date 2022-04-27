@@ -49,6 +49,8 @@ function coinFlips(flips) {
     return flippies;
 }
 
+
+// countflips function
 function countFlips(array) {
   
     let headsCounter = 0;
