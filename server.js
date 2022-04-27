@@ -144,8 +144,6 @@ app.use(function(req, res){
 })
 
 
-
-
 // debugging
 args["debug"] || false
 var debuggr = args.debug
@@ -154,4 +152,8 @@ var logger = args.log
 args["help"]
 
 
-// conditional to check input
+// log to a database
+if (logger === true) {
+  const accesslog = fs.createWriteStream('access.log', { flags: 'a' })
+  app.use(morgan('accesslog', { stream: accesslog }))
+}
