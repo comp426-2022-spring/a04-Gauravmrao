@@ -181,7 +181,7 @@ if (args.debug === true) {
   })
 
   app.get('/app/error', (req,res) => {
-    throw new Error('Error!')
+    throw new Error('Error test successful.')
   })
 }
 
