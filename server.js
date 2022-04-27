@@ -125,7 +125,7 @@ app.get('/app', (req, res) => {
     res.type('text/plain')
 })
 
-
+// no endpoint header
 app.use(function(req, res){
     res.status(404).send("Endpoint does not exist")
     res.type("text/plain")
