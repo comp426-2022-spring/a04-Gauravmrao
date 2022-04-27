@@ -85,7 +85,7 @@ app.get('/app/flips/:number', (req, res) => {
 
 
 
-
+// flipACoin function
 function flipACoin(call) {
     let currentCoin = coinFlip();
     let status;
