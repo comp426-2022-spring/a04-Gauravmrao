@@ -12,8 +12,8 @@ const morgan = require('morgan');
 const errorhandler = require('errorhandler')
 const fs = require('fs')
 
-// require process
-const { argv } = require('process');
+// require get the user input
+const args = require('minimist')(process.argv.slice(2))
 
 // use express
 app.use(express.urlencoded({extended: true}))
@@ -217,7 +217,7 @@ if (args.help === true) {
 
   --log		If set to false, no log files are written. Defaults to true.
               Logs are always written to database.
-              
+
   --help	Return this message and exit.`)
   process.exit(0)
 }
