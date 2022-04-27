@@ -147,12 +147,12 @@ app.use(function(req, res){
 
 
 if (args.log == true) {
-  const accessLog = fs.createWriteStream('access.log', { flags: 'a' })
-  app.use(morgan('combined', { stream: accessLog }))
+  // Use morgan for logging to files
+  // Create a write stream to append (flags: 'a') to a file
+  const WRITESTREAM = fs.createWriteStream('FILE', { flags: 'a' })
+  // Set up the access logging middleware
+  app.use(morgan('combined', { stream: accesslog }))
 }
-
-
-
 
 
 
