@@ -2,6 +2,17 @@
 const express = require('express');
 const app = express();
 
+// require morgan
+const morgan = require('morgan')
+
+// require database stuff
+const fs = require ('fs')
+const db = require("./database.js")
+
+
+
+
+
 let portNum = require('minimist')(process.argv.slice(2));
 var port = portNum.port || 5000;
 

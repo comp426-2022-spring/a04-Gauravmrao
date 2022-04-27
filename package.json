@@ -1,0 +1,26 @@
+{
+  "name": "a04-gauravmrao",
+  "version": "1.0.0",
+  "description": "assignment 4 retry",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a04-Gauravmrao.git"
+  },
+  "author": "Gaurav Rao",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a04-Gauravmrao/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a04-Gauravmrao#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.5.1",
+    "express": "^4.18.0",
+    "minimist": "^1.2.6",
+    "morgan": "^1.10.0"
+  }
+}
