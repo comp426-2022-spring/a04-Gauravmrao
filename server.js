@@ -30,7 +30,6 @@ const server = app.listen(port, () => {
 })
 
 
-// debugging
 
 
 // coinflip function
@@ -143,3 +142,13 @@ app.use(function(req, res){
     res.status(404).send("Endpoint does not exist")
     res.type("text/plain")
 })
+
+
+
+
+// debugging
+args["debug"] || false
+var debug = args.debug
+args["log"] || true
+var log = args.log
+args["help"]
