@@ -165,17 +165,15 @@ let logging = morgan('combined')
 app.use(logging('common'))
 
 
-// API IS WORKING
-app.get('/app', (req, res) => {
-    res.status(200).end('The API is working')
-    res.type('text/plain')
-})
+// 404's
+app.use(function(req,res) {
+  res.status(404).end('Endpoint does not exist');
+  res.type('text/plain');
+});
 
-// no endpoint header
-app.use(function(req, res){
-    res.status(404).send("404 NOT FOUND")
-    res.type("text/plain")
-})
+app.use(function(req,res){
+    res.status(404).send('404 NOT FOUND');
+});
 
 
 
