@@ -16,6 +16,7 @@ const fs = require('fs')
 const { argv } = require('process');
 
 // use express
+app.use(express.urlencoded({extended: true}))
 
 // User input
 let portNum = require('minimist')(process.argv.slice(2));
