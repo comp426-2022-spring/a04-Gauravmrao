@@ -9,7 +9,8 @@ const morgan = require('morgan')
 const fs = require ('fs')
 const db = require("./database.js")
 
-
+// get user input arguments
+const args = require('minimist')(process.argv.slice(2))
 
 
 
