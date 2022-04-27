@@ -9,7 +9,6 @@ const logdb = require('./database.js')
 
 // require morgan and fs
 const morgan = require('morgan');
-const errorhandler = require('errorhandler')
 const fs = require('fs')
 
 // require get the user input
