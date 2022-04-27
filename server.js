@@ -38,7 +38,7 @@ server.js [options]
 
 
 
-///////////let portNum = require('minimist')(process.argv.slice(2));
+let portNum = require('minimist')(process.argv.slice(2));
 var port = args.port || 5555;
 
 
