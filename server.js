@@ -149,6 +149,26 @@ app.get('/app/flip/call/tails', (req, res) => {
 
 
 
+// 404's
+app.use(function(req,res) {
+  res.status(404).end('Endpoint does not exist');
+  res.type('text/plain');
+});
+
+app.use(function(req,res){
+    res.status(404).send('404 NOT FOUND');
+});
+
+
+
+
+
+
+
+
+
+
+
 
 // responder
 app.get('/app/', (req,res) => {
@@ -163,17 +183,6 @@ app.get('/app/', (req,res) => {
 // Morgan
 let logging = morgan('combined')
 app.use(logging('common'))
-
-
-// 404's
-app.use(function(req,res) {
-  res.status(404).end('Endpoint does not exist');
-  res.type('text/plain');
-});
-
-app.use(function(req,res){
-    res.status(404).send('404 NOT FOUND');
-});
 
 
 
