@@ -152,3 +152,6 @@ var debuggr = args.debug
 args["log"] || true
 var logger = args.log
 args["help"]
+
+
+// conditional to check input
