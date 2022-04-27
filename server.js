@@ -148,7 +148,7 @@ app.use(function(req, res){
 
 // debugging
 args["debug"] || false
-var debug = args.debug
+var debuggr = args.debug
 args["log"] || true
-var log = args.log
+var logger = args.log
 args["help"]
