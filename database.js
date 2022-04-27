@@ -8,7 +8,7 @@ const database = require('better-sqlite3')
 const logdb = new database('log.db')
 
 // define statement
-const statement = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='access';`)
+const statement = logdb.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='access';`)
 
 // define row
 let row = statement.get();
