@@ -201,3 +201,7 @@ if (debuggr === true) {
     throw new Error('Error successful')
   })
 }
+
+
+// help and usage messages
+
