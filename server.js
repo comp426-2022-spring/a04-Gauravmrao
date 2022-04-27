@@ -30,6 +30,9 @@ const server = app.listen(port, () => {
 })
 
 
+// debugging
+
+
 // coinflip function
 function coinFlip() {
     let coinValue;
