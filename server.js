@@ -1,6 +1,6 @@
 // REQUIREMENTS
 
-// Require Express.js
+// Requirements from old lab
 const express = require('express');
 const app = express();
 
