@@ -12,6 +12,8 @@ const statement = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' 
 
 // define row
 let row = statement.get();
+
+// if row is undefined
 if (row === undefined) {
     console.log('Log database appears to be empty. Creating log database...')
 
