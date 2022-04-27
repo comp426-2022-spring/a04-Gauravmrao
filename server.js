@@ -15,6 +15,7 @@ const fs = require('fs')
 let portNum = require('minimist')(process.argv.slice(2));
 var port = portNum.port || 5000;
 
+// start app server
 const server = app.listen(port, () => {
     console.log('App is running on port %PORT%'.replace('%PORT%', port))
 })
