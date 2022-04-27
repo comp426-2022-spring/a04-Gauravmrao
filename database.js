@@ -4,6 +4,7 @@
 // require sqlite
 const database = require('better-sqlite3')
 
+// define database
 const logdb = new database('log.db')
 
 const stmt = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='access';`)
