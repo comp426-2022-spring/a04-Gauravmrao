@@ -16,10 +16,8 @@ let row = statement.get();
 // if row is undefined
 if (row === undefined) {
     console.log('Log database appears to be empty. Creating log database...')
-
     const sqlInit = `
-        CREATE TABLE access ( id INTEGER PRIMARY KEY, remote-addr VARCHAR, remote-user VARCHAR, datetime VARCHAR, method VARCHAR, url VARCHAR, http-version NUMERIC, status INTEGER, content-length NUMERIC)
-    `
+        CREATE TABLE access ( id INTEGER PRIMARY KEY, remote-addr VARCHAR, remote-user VARCHAR, datetime VARCHAR, method VARCHAR, url VARCHAR, http-version NUMERIC, status INTEGER, content-length NUMERIC)`
     logdb.exec(sqlInit)
 } else {
     console.log('Log database exists.')
