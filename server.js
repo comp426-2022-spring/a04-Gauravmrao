@@ -131,11 +131,11 @@ app.get('/app/flip/call/tails', (req, res) => {
 
 
 app.get('/app', (req, res) => {
-    res.status(200).end('The API is working')
+    res.status(400).end('Endpoint does not exist')
     res.type('text/plain')
 })
 
-
+// this was previously "Endpoint does not exist" in the quotes
 app.use(function(req, res){
     res.status(404).send("\[\{.*(id).*\}\]")
     res.type("text/plain")
