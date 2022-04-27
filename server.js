@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // require database
-const logdb = require('./database')
+const logdb = require('./database.js')
 
 const morgan = require('morgan');
 const errorhandler = require('errorhandler')
