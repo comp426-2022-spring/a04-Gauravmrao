@@ -13,6 +13,7 @@ const errorhandler = require('errorhandler')
 const fs = require('fs')
 
 // require process
+const { argv } = require('process');
 
 // User input
 let portNum = require('minimist')(process.argv.slice(2));
