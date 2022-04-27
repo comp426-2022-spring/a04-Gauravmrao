@@ -126,7 +126,12 @@ app.get('/app/flip/call/tails', (req, res) => {
 
 
 // responder
-
+app.get('/app/', (req,res) => {
+      res.statusCode = 200;
+      res.statusMessage = 'ok';
+      res.writeHead(res.statusCode, {'Content-Type' : 'text/plain'});
+      res.end(res.statusCode+ ' ' +res.statusMessage);
+});
 
 
 
