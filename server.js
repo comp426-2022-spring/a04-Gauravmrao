@@ -34,6 +34,34 @@ const server = app.listen(port, () => {
 
 
 
+// debugging logic
+args["debug"] || false
+var debug = args.debug
+args["log"] || true
+var log = args.log
+args["help"]
+
+
+// help function
+if (args.help === true) {
+  console.log(`server.js [options]
+  --port	Set the port number for the server to listen on. Must be an integer
+              between 1 and 65535.
+  --debug	If set to \`true\`, creates endlpoints /app/log/access/ which returns
+              a JSON access log from the database and /app/error which throws 
+              an error with the message "Error test successful." Defaults to 
+              \`false\`.
+  --log		If set to false, no log files are written. Defaults to true.
+              Logs are always written to database.
+  --help	Return this message and exit.`)
+  process.exit(0)
+}
+
+
+
+
+
+
 // coinflip function
 function coinFlip() {
     let coinValue;
@@ -155,16 +183,11 @@ app.use(function(req, res){
 })
 
 
-// debugging
-args["debug"] || false
-var debuggr = args.debug
-args["log"] || true
-var logger = args.log
-args["help"]
+
 
 
 // log to a database
-if (logger === true) {
+if (log === true) {
   const accesslog = fs.createWriteStream('access.log', { flags: 'a' })
   app.use(morgan('accesslog', { stream: accesslog }))
 }
@@ -192,7 +215,7 @@ app.use((req, res, next) => {
 
 
 // debugger
-if (debuggr === true) {
+if (debug === true) {
   app.get('/app/log/access', (req,res) => {
     const statement = logdb.prepare('SELECT * FROM accesslog').all()
     res.status(200).json(statement)
@@ -205,27 +228,3 @@ if (debuggr === true) {
 }
 
 
-// help and usage messages
-// Store help text 
-const help = (`
-server.js [options]
-
---port	Set the port number for the server to listen on. Must be an integer
-            between 1 and 65535.
-
---debug	If set to true, creates endlpoints /app/log/access/ which returns
-            a JSON access log from the database and /app/error which throws 
-            an error with the message "Error test successful." Defaults to 
-            false.
-
---log		If set to false, no log files are written. Defaults to true.
-            Logs are always written to database.
-
---help	Return this message and exit.
-`)
-
-// If --help or -h, echo help text to STDOUT and exit
-if (args.help || args.h) {
-    console.log(help)
-    process.exit(0)
-}

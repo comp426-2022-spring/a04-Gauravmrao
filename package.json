@@ -21,6 +21,7 @@
     "errorhandler": "^1.5.1",
     "express": "^4.17.3",
     "minimist": "^1.2.6",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "process": "^0.11.10"
   }
 }
