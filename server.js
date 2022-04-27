@@ -33,6 +33,7 @@ function coinFlip() {
     return coinValue;
 }
 
+// coinflip api info
 app.get('/app/flip', (req, res) => {
     res.status(200).json({ 'flip' : coinFlip()})
 })
