@@ -126,7 +126,7 @@ app.get('/app/flip/call/tails', (req, res) => {
 
 
 
-
+// Morgan
 let logging = morgan('combined')
 app.use(logging('common'))
 
@@ -181,3 +181,14 @@ app.use((req, res, next) => {
 
 
 // debugger
+if (debuggr === true) {
+  app.get('/app/log/access', (req,res) => {
+    const statement = logdb.prepare('SELECT * FROM accesslog').all()
+    res.status(200).json(statement)
+  })
+
+  // Error endpoint
+  app.get('/app/error', (req,res) => {
+    throw new Error('Error test successful')
+  })
+}
