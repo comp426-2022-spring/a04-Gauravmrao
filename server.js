@@ -157,3 +157,5 @@ if (logger === true) {
   const accesslog = fs.createWriteStream('access.log', { flags: 'a' })
   app.use(morgan('accesslog', { stream: accesslog }))
 }
+
+// function to log to database
