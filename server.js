@@ -25,8 +25,8 @@ var port = portNum.port || 5000;
 
 // start app server
 const server = app.listen(port, () => {
-    console.log('App is running on port %PORT%'.replace('%PORT%', port))
-})
+  console.log('App listening on port %PORT%'.replace('%PORT%',port));
+});
 
 
 
