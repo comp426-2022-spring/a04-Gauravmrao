@@ -120,6 +120,7 @@ let logging = morgan('combined')
 app.use(logging('common'))
 
 
+// API IS WORKING
 app.get('/app', (req, res) => {
     res.status(200).end('The API is working')
     res.type('text/plain')
