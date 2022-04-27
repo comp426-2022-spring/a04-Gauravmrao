@@ -187,8 +187,8 @@ if (debuggr === true) {
     res.status(200).json(statement)
   })
 
-  // Error endpoint
+  // Error
   app.get('/app/error', (req,res) => {
-    throw new Error('Error test successful')
+    throw new Error('Error successful')
   })
 }
