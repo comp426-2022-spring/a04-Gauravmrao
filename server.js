@@ -12,11 +12,6 @@ const db = require("./database.js")
 // get user input arguments
 const args = require('minimist')(process.argv.slice(2))
 
-// If --help or -h, echo help text to STDOUT and exit
-if (args.help || args.h) {
-  console.log(help)
-  process.exit(0)
-}
 
 // store help text
 const help = (`
@@ -36,7 +31,11 @@ server.js [options]
 --help	Return this message and exit.
 `)
 
-
+// If --help or -h, echo help text to STDOUT and exit
+if (args.help || args.h) {
+  console.log(help)
+  process.exit(0)
+}
 
 let portNum = require('minimist')(process.argv.slice(2));
 var port = args.port || 5555;
