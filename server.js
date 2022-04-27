@@ -47,7 +47,6 @@ const server = app.listen(port, () => {
 })
 
 
-
 function coinFlip() {
     let coinValue;
     let coinNum = Math.random();
