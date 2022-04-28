@@ -15,8 +15,8 @@ const args = require('minimist')(process.argv.slice(2))
 
 args["debug"] || false
 var debug = args.debug
-args["log"] || true
-var log = args.log
+//args["log"] || true
+//var log = args.log
 args["help"]
 
 // store help text
