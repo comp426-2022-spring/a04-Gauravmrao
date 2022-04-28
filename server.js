@@ -56,7 +56,6 @@ if (args.debug === true) {
     throw new Error('Error test successful.')
   })
 
-  process.exit(0)
 }
 
 
