@@ -13,6 +13,12 @@ const db = require("./database.js")
 const args = require('minimist')(process.argv.slice(2))
 
 
+args["debug"] || false
+var debug = args.debug
+args["log"] || true
+var log = args.log
+args["help"]
+
 // store help text
 const help = (`
 server.js [options]
@@ -36,6 +42,23 @@ if (args.help || args.h) {
   console.log(help)
   process.exit(0)
 }
+
+
+// error endpoint
+if (args.debug === true) {
+
+  app.get('/app/log/access', (req,res) => {
+    const stmt = db.prepare('SELECT * FROM accesslog').all()
+    res.status(200).json(stmt)
+  })
+
+  app.get('/app/error', (req,res) => {
+    throw new Error('Error test successful.')
+  })
+
+  process.exit(0)
+}
+
 
 let portNum = require('minimist')(process.argv.slice(2));
 var port = args.port || 5555;
@@ -169,19 +192,6 @@ app.use( (req, res, next) => {
   next()
 })
 
-
-// error endpoint
-if (args.debug === true) {
-
-  app.get('/app/log/access', (req,res) => {
-    const stmt = db.prepare('SELECT * FROM accesslog').all()
-    res.status(200).json(stmt)
-  })
-
-  app.get('/app/error', (req,res) => {
-    throw new Error('Error test successful.')
-  })
-}
 
 
 
