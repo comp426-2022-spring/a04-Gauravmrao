@@ -16,4 +16,3 @@ if (row === undefined) {
     console.log('Log database exists.')
 }
 module.exports = db
-

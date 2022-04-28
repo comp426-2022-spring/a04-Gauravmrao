@@ -41,7 +41,6 @@ if (args.help || args.h) {
   process.exit(0)
 }
 
-
 // error endpoint
 if (args.debug === true) {
 
@@ -60,7 +59,6 @@ if (args.debug === true) {
 
 let portNum = require('minimist')(process.argv.slice(2));
 var port = args.port || 5555;
-
 
 
 const server = app.listen(port, () => {
