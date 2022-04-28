@@ -48,7 +48,7 @@ if (args.help || args.h) {
 if (args.debug === true) {
 
   app.get('/app/log/access', (req,res) => {
-    const stmt = db.prepare('SELECT * FROM accesslog').all()
+    const stmt = db.prepare("\[\{.*(id).*\}\]").all()
     res.status(200).json(stmt)
   })
 
